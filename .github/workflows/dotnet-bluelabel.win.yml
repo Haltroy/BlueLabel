@@ -29,12 +29,12 @@ jobs:
       
       # Windows AMD64
       - name: Publish (Windows AMD64)
-        run: dotnet publish -c Release -r win-x64 -o ./publish/win-x64/ ./src/BlueLabel.Windows/BlueLabel.Windows.csproj
+        run: |
+          dotnet publish -c Release -r win-x64 -o ./publish/win-x64/ ./src/BlueLabel.Windows/BlueLabel.Windows.csproj
+          Remove-Item .\publish\win-x64\*.pdb
       - name: Upload Artifact (Windows AMD64)
         uses: actions/upload-artifact@v3
         with:
           name: BlueLabel Windows
           path: |
             ./publish/win-x64/
-            !*.dbg
-            !*.pdb

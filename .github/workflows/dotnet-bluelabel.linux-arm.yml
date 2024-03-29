@@ -14,30 +14,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: pguyot/arm-runner-action@v2
-        with:
-          commands: |
-            wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
-            chmod +x ./dotnet-install.sh
-            ./dotnet-install.sh --version latest
-            dotnet workload restore
-            dotnet restore ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-            dotnet build --no-restore ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-            dotnet publish -c Release -r linux-arm64 -o ./publish/linux-arm64/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-            dotnet publish -c Release -r linux-musl-arm64 -o ./publish/linux-musl-arm64/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-      - name: Upload Artifact (Linux ARM64)
-        uses: actions/upload-artifact@v3
-        with:
-          name: BlueLabel Linux ARM64
-          path: |
-            ./publish/linux-arm64/
-            !*.dbg
-            !*.pdb
-      - name: Upload Artifact (Linux MUSL ARM64)
-        uses: actions/upload-artifact@v3
-        with:
-          name: BlueLabel Linux MUSL ARM64
-          path: |
-            ./publish/linux-arm64/
-            !*.dbg
-            !*.pdb
+      - name: No auto-builds for ARM.
+        run: echo No auto-builds on ARM for now. GitHub does not have ARM runners. 
