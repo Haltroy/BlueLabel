@@ -31,7 +31,7 @@ jobs:
       - name: Upload Artifact (Linux AMD64)
         uses: actions/upload-artifact@v3
         with:
-          name: BlueAir Desktop (Linux AMD64)
+          name: BlueLabel Linux AMD64
           path: ./publish/linux-x64/
       
       # Linux MUSL AMD64
@@ -40,24 +40,5 @@ jobs:
       - name: Upload Artifact (Linux MUSL AMD64)
         uses: actions/upload-artifact@v3
         with:
-          name: BlueAir Desktop (Linux MUSL AMD64)
+          name: BlueLabel Linux MUSL AMD64
           path: ./publish/linux-musl-x64/
-      
-      # Linux ARM64
-      - name: Publish (Linux ARM64)
-        run: dotnet publish -c Release -r linux-arm64 -o ./publish/linux-arm64/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-      - name: Upload Artifact (Linux ARM64)
-        uses: actions/upload-artifact@v3
-        with:
-          name: BlueAir Desktop (Linux ARM64)
-          path: ./publish/linux-arm64/
-      
-      
-      # Linux MUSL ARM64
-      - name: Publish (Linux ARM64)
-        run: dotnet publish -c Release -r linux-musl-arm64 -o ./publish/linux-musl-arm64/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-      - name: Upload Artifact (Linux MUSL ARM64)
-        uses: actions/upload-artifact@v3
-        with:
-          name: BlueAir Desktop (Linux MUSL ARM64)
-          path: ./publish/linux-musl-arm64/
