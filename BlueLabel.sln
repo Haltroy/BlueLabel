@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueLabel", "src\BlueLabel\BlueLabel.csproj", "{375D4B26-8EB7-4770-9997-286F723665A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueLabel.Android", "src\BlueLabel.Android\BlueLabel.Android.csproj", "{078D36BE-86BA-4205-91E2-D322162ECC07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueLabel.Windows", "src\BlueLabel.Windows\BlueLabel.Windows.csproj", "{8001CC5D-BF49-4CF9-920F-9AA8AC90998A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueLabel.Linux", "src\BlueLabel.Linux\BlueLabel.Linux.csproj", "{F188D6BD-2914-43E9-972A-87BF4A37C783}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Folder", "Solution Folder", "{2E8D85C4-8D35-4BB2-A491-2689C8E92698}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG = CHANGELOG
+		LICENSE = LICENSE
+		README.md = README.md
+		.gitlab-ci.yml = .gitlab-ci.yml
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{375D4B26-8EB7-4770-9997-286F723665A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375D4B26-8EB7-4770-9997-286F723665A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375D4B26-8EB7-4770-9997-286F723665A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375D4B26-8EB7-4770-9997-286F723665A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{078D36BE-86BA-4205-91E2-D322162ECC07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{078D36BE-86BA-4205-91E2-D322162ECC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{078D36BE-86BA-4205-91E2-D322162ECC07}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{078D36BE-86BA-4205-91E2-D322162ECC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{078D36BE-86BA-4205-91E2-D322162ECC07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{078D36BE-86BA-4205-91E2-D322162ECC07}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8001CC5D-BF49-4CF9-920F-9AA8AC90998A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8001CC5D-BF49-4CF9-920F-9AA8AC90998A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8001CC5D-BF49-4CF9-920F-9AA8AC90998A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8001CC5D-BF49-4CF9-920F-9AA8AC90998A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F188D6BD-2914-43E9-972A-87BF4A37C783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F188D6BD-2914-43E9-972A-87BF4A37C783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F188D6BD-2914-43E9-972A-87BF4A37C783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F188D6BD-2914-43E9-972A-87BF4A37C783}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:lang="clr-namespace:BlueLabel.Lang"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="BlueLabel.Views.PreviewArchive">
+    <Grid ColumnDefinitions="*,5,*">
+        <GridSplitter Grid.Column="1" Background="{DynamicResource SystemChromeMediumColor}" Cursor="SizeWestEast" />
+        <TreeView Name="ArchiveTreeView" Grid.Column="0" Margin="10" SelectionChanged="TreeViewSelectionChanged" />
+        <DockPanel Grid.Column="2" Margin="10">
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="5">
+                <TextBlock Text="{x:Static lang:Lang.PreviewArchive_Name}" />
+                <TextBlock Name="NameBlock" />
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="5">
+                <TextBlock Text="{x:Static lang:Lang.PreviewArchive_Size}" />
+                <TextBlock Name="SizeBlock" />
+            </StackPanel>
+            <TextBlock Text="{x:Static lang:Lang.PreviewArchive_Comment}" DockPanel.Dock="Top" />
+            <TextBox IsReadOnly="True" Name="CommentBox" TextWrapping="Wrap" />
+        </DockPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,61 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:lang="clr-namespace:BlueLabel.Lang"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             Loaded="OnLoaded"
+             x:Class="BlueLabel.Views.PreviewMain">
+    <DockPanel>
+        <StackPanel Orientation="Vertical" DockPanel.Dock="Bottom">
+            <ScrollViewer>
+                <StackPanel Name="Labels" Orientation="Horizontal" Spacing="5" />
+            </ScrollViewer>
+            <Grid ColumnDefinitions="Auto,*,*,Auto">
+                <Button Content="&lt;" IsEnabled="False" Grid.Column="0" Name="PreviousItemButton"
+                        Click="PreviousItemButton_OnClick" />
+                <Button Content="&gt;" IsEnabled="False" Grid.Column="3" Name="NextItemButton"
+                        Click="NextItemButton_OnClick" />
+                <Button Grid.Column="2" Content="{x:Static lang:Lang.PreviewMain_Finish}" HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Center" Name="FinishButton" Click="FinishLabeling"
+                        IsEnabled="False" />
+                <Button Grid.Column="1" Content="{x:Static lang:Lang.PreviewMain_NewLabelButton}"
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Center" Name="AddNewLabel">
+                    <Button.Flyout>
+                        <Flyout>
+                            <StackPanel Orientation="Vertical" Spacing="5">
+                                <DockPanel>
+                                    <TextBlock DockPanel.Dock="Left" Text="{x:Static lang:Lang.PreviewMain_LabelName}"
+                                               VerticalAlignment="Center" />
+                                    <TextBox Name="LabelName" />
+                                </DockPanel>
+                                <Button Content="{x:Static lang:Lang.PreviewMain_Add}" HorizontalAlignment="Stretch"
+                                        HorizontalContentAlignment="Center" Click="AddLabel"
+                                        IsEnabled="{CompiledBinding !!#LabelName.Text}" />
+                            </StackPanel>
+                        </Flyout>
+                    </Button.Flyout>
+                </Button>
+            </Grid>
+            <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                    Content="{x:Static lang:Lang.PreviewMain_Back}" Click="GoBack" />
+        </StackPanel>
+        <DockPanel Margin="10">
+            <ToggleButton DockPanel.Dock="Top" Name="CurrentView" HorizontalAlignment="Center">
+                <Panel>
+                    <TextBlock Text="{x:Static lang:Lang.PreviewMain_Content}"
+                               IsVisible="{CompiledBinding !#CurrentView.IsChecked}" />
+                    <TextBlock Text="{x:Static lang:Lang.PreviewMain_FileInfo}"
+                               IsVisible="{CompiledBinding #CurrentView.IsChecked}" />
+                </Panel>
+            </ToggleButton>
+            <Panel Margin="10">
+                <Panel Name="ContentPanel" IsVisible="{CompiledBinding !#CurrentView.IsChecked}" />
+                <DockPanel IsVisible="{CompiledBinding #CurrentView.IsChecked}">
+                    <TextBox Name="FileInfo" TextWrapping="WrapWithOverflow" AcceptsReturn="True" IsReadOnly="True" />
+                </DockPanel>
+            </Panel>
+        </DockPanel>
+    </DockPanel>
+</UserControl>

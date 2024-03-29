@@ -1,0 +1,56 @@
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using Avalonia.Controls;
+using Avalonia.Interactivity;
+
+namespace BlueLabel.Views;
+
+public partial class AboutScreen : LUC
+{
+    public AboutScreen()
+    {
+        InitializeComponent();
+        Version.Text = "v"
+                       + (
+                           Assembly.GetExecutingAssembly() is { } ass
+                           && ass.GetName() is { } name
+                           && name.Version != null
+                               ? "" + (name.Version.Major > 0 ? name.Version.Major : "") +
+                                 (name.Version.Minor > 0 ? "." + name.Version.Minor : "") +
+                                 (name.Version.Build > 0 ? "." + name.Version.Build : "") +
+                                 (name.Version.Revision > 0 ? "." + name.Version.Revision : "")
+                               : "?"
+                       );
+        LicenseBox.Text = ReadResource("LICENSE");
+    }
+
+    private static string ReadResource(string name)
+    {
+        using var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(name);
+        if (stream == null) return string.Empty;
+        using StreamReader reader = new(stream);
+        return reader.ReadToEnd();
+    }
+
+    private void Back(object? sender, RoutedEventArgs e)
+    {
+        Main?.ShowControl(ReturnTo ?? new StartPage());
+    }
+
+    private void CarouselButton_Click(object? S, RoutedEventArgs e)
+    {
+        if (S is not Button { Tag: Control panel }) return;
+        CarouselMenu.SelectedItem = panel;
+    }
+
+    private void Navigate(object? sender, RoutedEventArgs e)
+    {
+        if (sender is not Control { Tag: string link }) return;
+        Process.Start(new ProcessStartInfo
+        {
+            UseShellExecute = true,
+            FileName = link
+        });
+    }
+}
