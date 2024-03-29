@@ -27,7 +27,6 @@
         <TrimMode>full</TrimMode>
         <TrimmerRemoveSymbols>true</TrimmerRemoveSymbols>
         <PublishTrimmed>true</PublishTrimmed>
-        <PublishSingleFile>true</PublishSingleFile>
         <InvariantGlobalization>true</InvariantGlobalization>
     </PropertyGroup>
 
