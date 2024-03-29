@@ -34,5 +34,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: BlueLabel Windows
-          path: ./publish/win-x64/
-
+          path: |
+            ./publish/win-x64/
+            !*.dbg
+            !*.pdb

@@ -32,7 +32,10 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: BlueLabel Linux AMD64
-          path: ./publish/linux-x64/
+          path: |
+            ./publish/linux-x64/
+            !*.dbg
+            !*.pdb
       
       # Linux MUSL AMD64
       - name: Publish (Linux AMD64)
@@ -41,4 +44,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: BlueLabel Linux MUSL AMD64
-          path: ./publish/linux-musl-x64/
+          path: |
+            ./publish/linux-musl-x64/
+            !*.dbg
+            !*.pdb
