@@ -40,17 +40,3 @@ jobs:
           name: BlueLabel Windows AMD64
           path: |
             ./publish/win-x64/
-
-      # Windows x86
-      - name: Publish (Windows AMD64)
-        run: |
-          dotnet publish -c Release -r win-x86 -o ./publish/win-x86/ ./src/BlueLabel.Windows/BlueLabel.Windows.csproj
-          Remove-Item .\publish\win-x86\*.pdb
-          Remove-Item -Recurse .\publish\win-x86\libvlc\win-x64\
-        shell: pwsh
-      - name: Upload Artifact (Windows x86)
-        uses: actions/upload-artifact@v3
-        with:
-          name: BlueLabel Windows x86
-          path: |
-            ./publish/win-x86/
