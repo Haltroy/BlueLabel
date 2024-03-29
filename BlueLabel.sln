@@ -13,8 +13,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Folder", "Solution
 		CHANGELOG = CHANGELOG
 		LICENSE = LICENSE
 		README.md = README.md
-		.gitlab-ci.yml = .gitlab-ci.yml
 		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Issue Templates", "Issue Templates", "{EEEF00EE-5FE7-44BB-908D-EEA76FDE810E}"
+	ProjectSection(SolutionItems) = preProject
+		.github\ISSUE_TEMPLATE\bug_report.md = .github\ISSUE_TEMPLATE\bug_report.md
+		.github\ISSUE_TEMPLATE\feature_request.md = .github\ISSUE_TEMPLATE\feature_request.md
+		.github\ISSUE_TEMPLATE\vulnerability.md = .github\ISSUE_TEMPLATE\vulnerability.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub Actions", "GitHub Actions", "{90F77C2D-0CF4-4C27-822E-634AC500732F}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet-bluelabel.android.yml = .github\workflows\dotnet-bluelabel.android.yml
+		.github\workflows\devskim.yml = .github\workflows\devskim.yml
+		.github\workflows\dotnet-bluelabel.linux.yml = .github\workflows\dotnet-bluelabel.linux.yml
+		.github\workflows\dotnet-bluelabel.win.yml = .github\workflows\dotnet-bluelabel.win.yml
+		.github\workflows\dotnet-bluelabel.linux-arm.yml = .github\workflows\dotnet-bluelabel.linux-arm.yml
 	EndProjectSection
 EndProject
 Global
@@ -41,5 +56,9 @@ Global
 		{F188D6BD-2914-43E9-972A-87BF4A37C783}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F188D6BD-2914-43E9-972A-87BF4A37C783}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F188D6BD-2914-43E9-972A-87BF4A37C783}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EEEF00EE-5FE7-44BB-908D-EEA76FDE810E} = {2E8D85C4-8D35-4BB2-A491-2689C8E92698}
+		{90F77C2D-0CF4-4C27-822E-634AC500732F} = {2E8D85C4-8D35-4BB2-A491-2689C8E92698}
 	EndGlobalSection
 EndGlobal

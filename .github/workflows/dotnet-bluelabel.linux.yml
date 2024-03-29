@@ -11,63 +11,40 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 8.0.x
-    - name: Setup workloads
-      run: dotnet workload restore
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-
-    # Linux AMD64
-    - name: Publish (Linux AMD64)
-      run: dotnet publish -c Release -r linux-x64 -o ./publish/linux-x64/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-    - name: Upload Artifact (Linux AMD64)
-      uses: actions/upload-artifact@v3
-      with:
-          name: BlueAir Desktop (Linux AMD64)
-          path: ./publish/linux-x64/
-
-    # Linux ARM64
-    - name: Publish (Linux ARM64)
-      run: dotnet publish -c Release -r linux-arm64 -o ./publish/linux-arm64/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-    - name: Upload Artifact (Linux ARM64)
-      uses: actions/upload-artifact@v3
-      with:
-          name: BlueAir Desktop (Linux ARM64)
-          path: ./publish/linux-arm64/
-
-    # Linux ARM
-    - name: Publish (Linux ARM)
-      run: dotnet publish -c Release -r linux-arm -o ./publish/linux-arm/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-    - name: Upload Artifact (Linux ARM)
-      uses: actions/upload-artifact@v3
-      with:
-          name: BlueAir Desktop (Linux ARM)
-          path: ./publish/linux-arm/
-
-    # Linux MUSL AMD64
-    - name: Publish (Linux AMD64)
-      run: dotnet publish -c Release -r linux-musl-x64 -o ./publish/linux-musl-x64/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-    - name: Upload Artifact (Linux MUSL AMD64)
-      uses: actions/upload-artifact@v3
-      with:
-          name: BlueAir Desktop (Linux MUSL AMD64)
-          path: ./publish/linux-musl-x64/
-
-    # Linux MUSL ARM64
-    - name: Publish (Linux ARM64)
-      run: dotnet publish -c Release -r linux-musl-arm64 -o ./publish/linux-musl-arm64/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-    - name: Upload Artifact (Linux MUSL ARM64)
-      uses: actions/upload-artifact@v3
-      with:
-          name: BlueAir Desktop (Linux MUSL ARM64)
-          path: ./publish/linux-musl-arm64/
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Setup workloads
+        run: dotnet workload restore
+      - name: Restore dependencies
+        run: dotnet restore ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
+      - name: Build
+        run: dotnet build --no-restore ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
+      
+      # Linux AMD64
+      - name: Publish (Linux AMD64)
+        run: |
+          dotnet publish -c Release -r linux-x64 -o ./publish/linux-x64/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
+          rm ./publish/linux-x64/*.dbg
+      - name: Upload Artifact (Linux AMD64)
+        uses: actions/upload-artifact@v4
+        with:
+          name: BlueLabel Linux AMD64
+          path: |
+            ./publish/linux-x64/
+      
+      # Linux MUSL AMD64
+      - name: Publish (Linux AMD64)
+        run: |
+          dotnet publish -c Release -r linux-musl-x64 -o ./publish/linux-musl-x64/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
+          rm ./publish/linux-musl-x64/*.dbg
+      - name: Upload Artifact (Linux MUSL AMD64)
+        uses: actions/upload-artifact@v4
+        with:
+          name: BlueLabel Linux MUSL AMD64
+          path: |
+            ./publish/linux-musl-x64/

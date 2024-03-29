@@ -9,9 +9,7 @@
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-        <!-- We use Debian in our GitLab CI so it will throw Cross-OS error which is not supported yet.
-         Making Windows packages to self-contained applications for now. -->
-        <!-- <PublishAot>true</PublishAot> -->
+        <PublishAot>true</PublishAot>
         <OptimizationPreference>Size</OptimizationPreference>
         <DebugSymbols>false</DebugSymbols>
         <DebugType>embedded</DebugType>
@@ -20,7 +18,6 @@
         <TrimMode>full</TrimMode>
         <TrimmerRemoveSymbols>true</TrimmerRemoveSymbols>
         <PublishTrimmed>true</PublishTrimmed>
-        <PublishSingleFile>true</PublishSingleFile>
         <InvariantGlobalization>true</InvariantGlobalization>
     </PropertyGroup>
 

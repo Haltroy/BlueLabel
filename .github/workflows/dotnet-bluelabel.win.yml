@@ -15,24 +15,28 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 8.0.x
-    - name: Setup workloads
-      run: dotnet workload restore
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore ./src/BlueLabel.Windows/BlueLabel.Windows.csproj
-
-    # Windows AMD64
-    - name: Publish (Windows AMD64)
-      run: dotnet publish -c Release -r win-x64 -o ./publish/win-x64/ ./src/BlueLabel.Windows/BlueLabel.Windows.csproj
-    - name: Upload Artifact (Windows AMD64)
-      uses: actions/upload-artifact@v3
-      with:
-          name: BlueAir Desktop (Windows AMD64)
-          path: ./publish/win-x64/
-
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Setup workloads
+        run: dotnet workload restore
+      - name: Restore dependencies
+        run: dotnet restore ./src/BlueLabel.Windows/BlueLabel.Windows.csproj
+      - name: Build
+        run: dotnet build --no-restore ./src/BlueLabel.Windows/BlueLabel.Windows.csproj
+      
+      # Windows AMD64
+      - name: Publish (Windows AMD64)
+        run: |
+          dotnet publish -c Release -r win-x64 -o ./publish/win-x64/ ./src/BlueLabel.Windows/BlueLabel.Windows.csproj
+          Remove-Item .\publish\win-x64\*.pdb
+          Remove-Item -Recurse .\publish\win-x64\libvlc\win-x86\
+        shell: pwsh
+      - name: Upload Artifact (Windows AMD64)
+        uses: actions/upload-artifact@v4
+        with:
+          name: BlueLabel Windows AMD64
+          path: |
+            ./publish/win-x64/
