@@ -29,6 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub Actions", "GitHub Ac
 		.github\workflows\devskim.yml = .github\workflows\devskim.yml
 		.github\workflows\dotnet-bluelabel.linux.yml = .github\workflows\dotnet-bluelabel.linux.yml
 		.github\workflows\dotnet-bluelabel.win.yml = .github\workflows\dotnet-bluelabel.win.yml
+		.github\workflows\dotnet-bluelabel.linux-arm.yml = .github\workflows\dotnet-bluelabel.linux-arm.yml
 	EndProjectSection
 EndProject
 Global

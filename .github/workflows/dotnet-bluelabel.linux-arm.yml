@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pguyot/arm-runner-action@v2
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
@@ -24,24 +25,6 @@ jobs:
         run: dotnet restore ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
       - name: Build
         run: dotnet build --no-restore ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-      
-      # Linux AMD64
-      - name: Publish (Linux AMD64)
-        run: dotnet publish -c Release -r linux-x64 -o ./publish/linux-x64/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-      - name: Upload Artifact (Linux AMD64)
-        uses: actions/upload-artifact@v3
-        with:
-          name: BlueAir Desktop (Linux AMD64)
-          path: ./publish/linux-x64/
-      
-      # Linux MUSL AMD64
-      - name: Publish (Linux AMD64)
-        run: dotnet publish -c Release -r linux-musl-x64 -o ./publish/linux-musl-x64/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
-      - name: Upload Artifact (Linux MUSL AMD64)
-        uses: actions/upload-artifact@v3
-        with:
-          name: BlueAir Desktop (Linux MUSL AMD64)
-          path: ./publish/linux-musl-x64/
       
       # Linux ARM64
       - name: Publish (Linux ARM64)
