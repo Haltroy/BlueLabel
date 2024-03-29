@@ -13,9 +13,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
       - name: Setup workloads
@@ -31,7 +31,7 @@ jobs:
           dotnet publish -c Release -r linux-x64 -o ./publish/linux-x64/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
           rm ./publish/linux-x64/*.dbg
       - name: Upload Artifact (Linux AMD64)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: BlueLabel Linux AMD64
           path: |
@@ -43,7 +43,7 @@ jobs:
           dotnet publish -c Release -r linux-musl-x64 -o ./publish/linux-musl-x64/ ./src/BlueLabel.Linux/BlueLabel.Linux.csproj
           rm ./publish/linux-musl-x64/*.dbg
       - name: Upload Artifact (Linux MUSL AMD64)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: BlueLabel Linux MUSL AMD64
           path: |
