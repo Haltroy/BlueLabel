@@ -9,10 +9,10 @@
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
         <AndroidPackageFormat>apk</AndroidPackageFormat>
         <RootNamespace>BlueLabel.Android</RootNamespace>
-        <PublishAot>true</PublishAot>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <PublishAot>true</PublishAot>
         <InvariantGlobalization>true</InvariantGlobalization>
         <UseSystemResourceKeys>true</UseSystemResourceKeys>
         <NullabilityInfoContextSupport>false</NullabilityInfoContextSupport>
