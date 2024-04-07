@@ -34,8 +34,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: BlueLabel Linux AMD64
-          path: |
-            ./publish/linux-x64/
+          path: ./publish/linux-x64/
       
       # Linux MUSL AMD64
       - name: Publish (Linux AMD64)
@@ -46,5 +45,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: BlueLabel Linux MUSL AMD64
-          path: |
-            ./publish/linux-musl-x64/
+          path: ./publish/linux-musl-x64/

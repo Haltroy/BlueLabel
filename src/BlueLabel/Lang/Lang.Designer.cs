@@ -447,27 +447,9 @@ namespace BlueLabel.Lang {
             }
         }
         
-        public static string Start_Desc1 {
+        public static string Start_Desc {
             get {
-                return ResourceManager.GetString("Start_Desc1", resourceCulture);
-            }
-        }
-        
-        public static string Start_Desc2 {
-            get {
-                return ResourceManager.GetString("Start_Desc2", resourceCulture);
-            }
-        }
-        
-        public static string Start_Desc3 {
-            get {
-                return ResourceManager.GetString("Start_Desc3", resourceCulture);
-            }
-        }
-        
-        public static string Start_Desc4 {
-            get {
-                return ResourceManager.GetString("Start_Desc4", resourceCulture);
+                return ResourceManager.GetString("Start_Desc", resourceCulture);
             }
         }
         
@@ -732,6 +714,84 @@ namespace BlueLabel.Lang {
         public static string PreviewMain_FileInfo_LinksToNothing {
             get {
                 return ResourceManager.GetString("PreviewMain_FileInfo_LinksToNothing", resourceCulture);
+            }
+        }
+        
+        public static string Import_ImportFile {
+            get {
+                return ResourceManager.GetString("Import_ImportFile", resourceCulture);
+            }
+        }
+        
+        public static string Import_DialogTitle {
+            get {
+                return ResourceManager.GetString("Import_DialogTitle", resourceCulture);
+            }
+        }
+        
+        public static string Import_FileTypeName {
+            get {
+                return ResourceManager.GetString("Import_FileTypeName", resourceCulture);
+            }
+        }
+        
+        public static string Start_Export {
+            get {
+                return ResourceManager.GetString("Start_Export", resourceCulture);
+            }
+        }
+        
+        public static string Start_ExportTitle {
+            get {
+                return ResourceManager.GetString("Start_ExportTitle", resourceCulture);
+            }
+        }
+        
+        public static string AccentColor {
+            get {
+                return ResourceManager.GetString("AccentColor", resourceCulture);
+            }
+        }
+        
+        public static string Start_LastOpenedProjects {
+            get {
+                return ResourceManager.GetString("Start_LastOpenedProjects", resourceCulture);
+            }
+        }
+        
+        public static string Start_NoLastOpened {
+            get {
+                return ResourceManager.GetString("Start_NoLastOpened", resourceCulture);
+            }
+        }
+        
+        public static string Start_ClearLastOpened {
+            get {
+                return ResourceManager.GetString("Start_ClearLastOpened", resourceCulture);
+            }
+        }
+        
+        public static string Start_NewProject {
+            get {
+                return ResourceManager.GetString("Start_NewProject", resourceCulture);
+            }
+        }
+        
+        public static string Start_NewProjectDesc {
+            get {
+                return ResourceManager.GetString("Start_NewProjectDesc", resourceCulture);
+            }
+        }
+        
+        public static string Start_ImportProject {
+            get {
+                return ResourceManager.GetString("Start_ImportProject", resourceCulture);
+            }
+        }
+        
+        public static string Start_ImportProjectDesc {
+            get {
+                return ResourceManager.GetString("Start_ImportProjectDesc", resourceCulture);
             }
         }
     }

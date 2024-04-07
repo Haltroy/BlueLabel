@@ -225,17 +225,15 @@
     <data name="Start_Next" xml:space="preserve">
         <value>Next</value>
     </data>
-    <data name="Start_Desc1" xml:space="preserve">
-        <value>Welcome to BlueLabel.</value>
-    </data>
-    <data name="Start_Desc2" xml:space="preserve">
-        <value>This program will help you to organize files easily by letting you preview them and organize it for you.</value>
-    </data>
-    <data name="Start_Desc3" xml:space="preserve">
-        <value>You can automate the process by letting BlueLabel pick from duration, image size, file type and file size etc.</value>
-    </data>
-    <data name="Start_Desc4" xml:space="preserve">
-        <value>You can also customize the process to either use subfolders or rename the files.</value>
+    <data name="Start_Desc" xml:space="preserve">
+        <value>Welcome to BlueLabel.
+            
+This program will help you to organize files easily by letting you preview them and organize it for you.
+        
+You can automate the process by letting BlueLabel pick from duration, image size, file type and file size etc. 
+        
+You can also customize the process to either use subfolders or rename the files.        
+        </value>
     </data>
     <data name="Start_Automation" xml:space="preserve">
         <value>Automation:</value>
@@ -375,5 +373,44 @@
     </data>
     <data name="PreviewMain_FileInfo_LinksToNothing" xml:space="preserve">
         <value>Nothing</value>
+    </data>
+    <data name="Import_ImportFile" xml:space="preserve">
+        <value>Import File:</value>
+    </data>
+    <data name="Import_DialogTitle" xml:space="preserve">
+        <value>Select a BlueLabel project...</value>
+    </data>
+    <data name="Import_FileTypeName" xml:space="preserve">
+        <value>BlueLabel Project</value>
+    </data>
+    <data name="Start_Export" xml:space="preserve">
+        <value>Export...</value>
+    </data>
+    <data name="Start_ExportTitle" xml:space="preserve">
+        <value>Export BlueLabel project to...</value>
+    </data>
+    <data name="AccentColor" xml:space="preserve">
+        <value>Accent Color:</value>
+    </data>
+    <data name="Start_LastOpenedProjects" xml:space="preserve">
+        <value>Last Opened Projects</value>
+    </data>
+    <data name="Start_NoLastOpened" xml:space="preserve">
+        <value>No last opened projects.</value>
+    </data>
+    <data name="Start_ClearLastOpened" xml:space="preserve">
+        <value>Clear all...</value>
+    </data>
+    <data name="Start_NewProject" xml:space="preserve">
+        <value>New project</value>
+    </data>
+    <data name="Start_NewProjectDesc" xml:space="preserve">
+        <value>Start a new BlueLabel project...</value>
+    </data>
+    <data name="Start_ImportProject" xml:space="preserve">
+        <value>Import a project</value>
+    </data>
+    <data name="Start_ImportProjectDesc" xml:space="preserve">
+        <value>Import a BlueLabel project...</value>
     </data>
 </root>

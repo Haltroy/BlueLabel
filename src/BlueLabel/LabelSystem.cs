@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 
 namespace BlueLabel;
@@ -250,6 +251,11 @@ public class LabelerSetting
     private string outputFolder = string.Empty;
 
     /// <summary>
+    ///     List of all labels.
+    /// </summary>
+    public List<Label> Labels { get; set; } = [];
+
+    /// <summary>
     ///     Determines the type of automation.
     /// </summary>
     public AutomationType Automation { get; set; } = AutomationType.Manual;
@@ -336,6 +342,25 @@ public class LabelerSetting
     ///     use filters while searching files to sort.
     /// </summary>
     public bool UseFilters { get; set; }
+
+    public LabelerSetting Load(string fileName)
+    {
+        if (!File.Exists(fileName)) throw new FileNotFoundException(fileName);
+        using var fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+        using var stream = new BrotliStream(fs, CompressionMode.Decompress);
+        // TODO
+        throw new NotImplementedException();
+    }
+
+    public LabelerSetting Save(string fileName)
+    {
+        using var fs = !File.Exists(fileName)
+            ? File.Create(fileName)
+            : new FileStream(fileName, FileMode.Truncate, FileAccess.Write, FileShare.ReadWrite);
+        using var stream = new BrotliStream(fs, CompressionMode.Compress);
+        // TODO
+        throw new NotImplementedException();
+    }
 
     private IEnumerable<string> FilterFiles(string path, params string[] exts)
     {

@@ -33,11 +33,6 @@ public partial class AboutScreen : LUC
         return reader.ReadToEnd();
     }
 
-    private void Back(object? sender, RoutedEventArgs e)
-    {
-        Main?.ShowControl(ReturnTo ?? new StartPage());
-    }
-
     private void CarouselButton_Click(object? S, RoutedEventArgs e)
     {
         if (S is not Button { Tag: Control panel }) return;

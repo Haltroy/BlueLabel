@@ -37,7 +37,7 @@ build -r linux-x64 -c Release). The application should be inside the bin folder 
 
 1. Install [.NET 8 SDK](https://dotnet.microsoft.com) to your system. This will also should install .NET 8 runtime.
 2. Clone the repository, use the green "Code" arrow to get the code.
-3. Either open the "BlueLabel.sln" file in an IDe that supports .NET solution files (Visual Studio -any edition- or
+3. Either open the "BlueLabel.sln" file in an IDE that supports .NET solution files (Visual Studio -any edition- or
    JetBrains Rider) or navigate to the target folder (ex. BlueLabel.Windows)
 4. Open a terminal application and run `dotnet build`.
     - On Windows, hold SHift and Right-click on the folder and press either the Windows Terminal, Powershell or Command
