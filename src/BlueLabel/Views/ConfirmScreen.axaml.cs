@@ -87,7 +87,7 @@ public partial class ConfirmScreen : LUC
 
     private void Back(object? sender, RoutedEventArgs e)
     {
-        Main?.ShowControl(ReturnTo ?? new StartPage());
+        Main?.ShowControl(ReturnTo ?? new NewLabelProject());
     }
 
     private void Continue(object? sender, RoutedEventArgs e)

@@ -1,0 +1,40 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:lang="clr-namespace:BlueLabel.Lang"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="BlueLabel.Views.ImportPage">
+    <StackPanel Spacing="20" Margin="10" VerticalAlignment="Center">
+        <DockPanel>
+            <TextBlock Text="{x:Static lang:Lang.Import_ImportFile}" DockPanel.Dock="Left" VerticalAlignment="Center" />
+            <Button Content="..." DockPanel.Dock="Right" VerticalAlignment="Center" Click="ImportFileBrowse" />
+            <TextBox Name="ImportFile" Margin="5 0" TextChanged="OnTextChanged" />
+        </DockPanel>
+        <StackPanel Orientation="Vertical" Spacing="5">
+            <DockPanel LastChildFill="True">
+                <TextBlock Text="{x:Static lang:Lang.Start_FolderToProcess}" DockPanel.Dock="Left"
+                           VerticalAlignment="Center" />
+                <Button Content="..." DockPanel.Dock="Right" VerticalAlignment="Center"
+                        Click="BrowseInputFolder" />
+                <TextBox Margin="5 0" Name="InputFolder" TextChanged="OnTextChanged" />
+            </DockPanel>
+            <ToggleSwitch OnContent="{CompiledBinding $self.OffContent}" IsChecked="True"
+                          OffContent="{x:Static lang:Lang.Start_SortInInput}" Name="UseInputFolder"
+                          IsCheckedChanged="UseInputFolder_OnIsCheckedChanged" />
+            <DockPanel LastChildFill="True" IsEnabled="{CompiledBinding !#UseInputFolder.IsChecked}">
+                <TextBlock Text="{x:Static lang:Lang.Start_OutputFolder}" DockPanel.Dock="Left"
+                           VerticalAlignment="Center" />
+                <Button Content="..." DockPanel.Dock="Right" Click="BrowseOutputFolder" />
+                <TextBox Margin="5 0" Name="OutputFolder" TextChanged="OnTextChanged" />
+            </DockPanel>
+        </StackPanel>
+        <Grid ColumnDefinitions="*,*">
+            <Button Grid.Column="0" Content="{x:Static lang:Lang.About_Back}"
+                    HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Click="Back" />
+            <Button Grid.Column="1" IsEnabled="False" Name="NextButton"
+                    Content="{x:Static lang:Lang.ConfirmScreen_Continue}"
+                    HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Click="Next" />
+        </Grid>
+    </StackPanel>
+</UserControl>

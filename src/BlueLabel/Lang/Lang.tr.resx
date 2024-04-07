@@ -340,17 +340,15 @@
     <data name="Start_FiltersDesc" xml:space="preserve">
         <value>Her dosya uzantısını virgülle (,) ayırınız. Bu program joker karakterleri ("*" gibi) kendi otomatik eklediğinden eklemenize gerek yoktur.</value>
     </data>
-    <data name="Start_Desc1" xml:space="preserve">
-        <value> BlueLabel uygulamasına hoş geldiniz.</value>
-    </data>
-    <data name="Start_Desc2" xml:space="preserve">
-        <value>Bu program, dosyaları önizlemenize ve sizin için düzenlemenize olanak tanıyarak dosyaları kolayca düzenlemenize yardımcı olacaktır.</value>
-    </data>
-    <data name="Start_Desc3" xml:space="preserve">
-        <value>Etiketleyicinin süre, görüntü boyutu, dosya türü ve dosya boyutu vb. arasından seçim yapmasına izin vererek süreci otomatikleştirebilirsiniz.</value>
-    </data>
-    <data name="Start_Desc4" xml:space="preserve">
-        <value>Ayrıca alt klasörleri kullanacak veya dosyaları yeniden adlandıracak şekilde işlemi özelleştirebilirsiniz.</value>
+    <data name="Start_Desc" xml:space="preserve">
+        <value>BlueLabel uygulamasına hoş geldiniz.
+        
+Bu program, dosyaları önizlemenize ve sizin için düzenlemenize olanak tanıyarak dosyaları kolayca düzenlemenize yardımcı olacaktır.        
+        
+Etiketleyicinin süre, görüntü boyutu, dosya türü ve dosya boyutu vb. arasından seçim yapmasına izin vererek süreci otomatikleştirebilirsiniz.            
+        
+Ayrıca alt klasörleri kullanacak veya dosyaları yeniden adlandıracak şekilde işlemi özelleştirebilirsiniz.        
+        </value>
     </data>
     <data name="AppName" xml:space="preserve">
         <value>BlueLabel</value>
@@ -366,5 +364,44 @@
     </data>
     <data name="Start_AutomateFİleSizeTB" xml:space="preserve">
         <value>TB (1000 GB)</value>
+    </data>
+    <data name="Import_ImportFile" xml:space="preserve">
+        <value>İçe Aktar:</value>
+    </data>
+    <data name="Import_DialogTitle" xml:space="preserve">
+        <value>Bir BlueLabel projesi seçin...</value>
+    </data>
+    <data name="Import_FileTypeName" xml:space="preserve">
+        <value>BlueLabel Projesi</value>
+    </data>
+    <data name="Start_Export" xml:space="preserve">
+        <value>Dışa aktar...</value>
+    </data>
+    <data name="Start_ExportTitle" xml:space="preserve">
+        <value>BlueLabel projesini dışa aktar...</value>
+    </data>
+    <data name="AccentColor" xml:space="preserve">
+        <value>Tema Rengi:</value>
+    </data>
+    <data name="Start_LastOpenedProjects" xml:space="preserve">
+        <value>En Son Açılan Projeler</value>
+    </data>
+    <data name="Start_NoLastOpened" xml:space="preserve">
+        <value>En son açılan bir proje yok.</value>
+    </data>
+    <data name="Start_ClearLastOpened" xml:space="preserve">
+        <value>Hepsini temizle...</value>
+    </data>
+    <data name="Start_NewProject" xml:space="preserve">
+        <value>Yeni proje</value>
+    </data>
+    <data name="Start_NewProjectDesc" xml:space="preserve">
+        <value>Yeni bir BlueLabel projesi başlat...</value>
+    </data>
+    <data name="Start_ImportProject" xml:space="preserve">
+        <value>Proje içe aktar</value>
+    </data>
+    <data name="Start_ImportProjectDesc" xml:space="preserve">
+        <value>Bir BlueLabel projesini içe aktarın.</value>
     </data>
 </root>

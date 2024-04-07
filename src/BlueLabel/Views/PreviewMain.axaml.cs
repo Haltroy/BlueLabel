@@ -206,6 +206,6 @@ public partial class PreviewMain : LUC
 
     private void GoBack(object? sender, RoutedEventArgs e)
     {
-        Main?.ShowControl(ReturnTo ?? new StartPage());
+        Main?.ShowControl(ReturnTo ?? new NewLabelProject());
     }
 }
